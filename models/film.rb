@@ -25,6 +25,14 @@ def update()
   return result
 end
 
+def customers()
+  sql = "SELECT customers.* FROM customers INNER JOIN tickets ON customers.id = tickets.customer_id WHERE tickets.film_id = $1"
+  values = [@id]
+  film_hashes = SqlRunner.run(sql, values)
+  films = Film.map_items(film_hashes)
+  return films
+end
+
 # class methods below this line
 def self.all()
   sql = "SELECT * FROM films"
