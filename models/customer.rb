@@ -2,8 +2,8 @@ require_relative("../db/sql_runner")
 
 class Customer
 
-attr_reader :name, :id
-attr_accessor :funds
+attr_reader :id
+attr_accessor :name, :funds
 
 def initialize(options)
   @name = options["name"]
@@ -18,6 +18,14 @@ def save()
   values = [@name, @funds]
   customer = SqlRunner.run(sql, values).first
   @id = customer["id"].to_i
+end
+
+def update()
+  sql = "UPDATE customers SET (name, funds) = ($1, $2) WHERE id = $3"
+  values = [@name, @funds, @id]
+  result = SqlRunner.run(sql, values)
+  return result
+
 end
 
 
