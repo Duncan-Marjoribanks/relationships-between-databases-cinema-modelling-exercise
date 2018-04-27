@@ -4,6 +4,6 @@ require_relative("..ticket")
 
 class TicketTest < MiniTest::Test
 
-
+  
 
 end
