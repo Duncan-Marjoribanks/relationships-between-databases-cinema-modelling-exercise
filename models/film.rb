@@ -17,5 +17,17 @@ def save()
   @id = film["id"].to_i
 end
 
+def self.all()
+  sql = "SELECT * FROM films"
+  film_hashes = SqlRunner.run(sql)
+  film = Film.map_items(film_hashes)
+  return film
+end
+
+def self.map_items(film_hashes)
+  result = film_hashes.map{ |film_hash| Film.new(film_hash) }
+  return result
+end
+
 
 end
