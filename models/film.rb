@@ -33,6 +33,7 @@ def customers()
   return films
 end
 
+
 # class methods below this line
 def self.all()
   sql = "SELECT * FROM films"

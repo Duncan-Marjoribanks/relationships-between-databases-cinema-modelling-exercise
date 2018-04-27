@@ -1,5 +1,6 @@
 require_relative("../db/sql_runner")
 
+
 class Customer
 
 attr_reader :id
@@ -37,13 +38,18 @@ def films()
 end
 
 def reduce_funds(amount)
-  result = @funds -= (amount)
-  return result
+  @funds -= amount
 end
 
 def increase_funds(amount)
-  result = @funds += (amount)
-  return result
+  @funds += amount
+end
+
+def buy_ticket(film)
+  sql = "INSERT INTO tickets (customer_id, film_id) VALUES ($1, $2)"
+  values = [@id, film.id]
+  SqlRunner.run(sql, values)
+  reduce_funds(film.price)
 end
 
 #class methods below this line

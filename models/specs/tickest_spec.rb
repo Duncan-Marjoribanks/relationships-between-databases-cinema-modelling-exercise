@@ -6,5 +6,4 @@ class TicketTest < MiniTest::Test
 
 
 
-
 end
