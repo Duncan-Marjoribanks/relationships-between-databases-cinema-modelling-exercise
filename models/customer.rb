@@ -20,7 +20,16 @@ def save()
   @id = customer["id"].to_i
 end
 
+def self.all()
+  sql = "SELECT * FROM customers"
+  customer_hashes = SqlRunner.run(sql)
+  return Customer.map_items(customer_hashes)
+end
 
+def self.map_items(customer_hashes)
+result = customer_hashes.map{ |customer_hash| Customer.new(customer_hash)}
+return result
+end
 
 
 
