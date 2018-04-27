@@ -35,6 +35,12 @@ def films()
   films = Film.map_items(film_hashes)
   return films
 end
+
+def reduce_funds(amount)
+  result = @funds -= (amount)
+  return result
+end
+
 #class methods below this line
 
 def self.all()
