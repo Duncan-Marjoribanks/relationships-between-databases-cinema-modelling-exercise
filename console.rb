@@ -1,6 +1,6 @@
 require_relative("models/customer")
 require_relative("models/film")
-require_relative("models/tickets")
+require_relative("models/ticket")
 require("pry-byebug")
 
 
@@ -18,7 +18,11 @@ film1 = Film.new({
 film1.save()
 
 
-
+ticket1 = Ticket.new({
+  "customer_id" => customer1.id,
+  "film_id" => film1.id
+  })
+ticket1.save()
 
 
 

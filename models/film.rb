@@ -1,7 +1,7 @@
 require_relative("../db/sql_runner")
 class Film
 
-attr_reader :title, :price
+attr_reader :title, :price, :id
 
 def initialize(options)
   @title = options["title"]
@@ -13,8 +13,8 @@ def save()
   sql = "INSERT INTO films (title, price) VALUES ($1, $2)
   RETURNING id"
   values = [@title, @price]
-  films = SqlRunner.run(sql, values).first
-  @id = films["id"].to_i
+  film = SqlRunner.run(sql, values).first
+  @id = film["id"].to_i
 end
 
 
