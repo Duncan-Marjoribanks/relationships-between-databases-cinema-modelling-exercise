@@ -41,6 +41,11 @@ def reduce_funds(amount)
   return result
 end
 
+def increase_funds(amount)
+  result = @funds += (amount)
+  return result
+end
+
 #class methods below this line
 
 def self.all()
