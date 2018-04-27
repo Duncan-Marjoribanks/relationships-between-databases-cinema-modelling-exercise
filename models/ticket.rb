@@ -32,5 +32,9 @@ def self.map_items(ticket_hashes)
   return result
 end
 
+def self.delete_all()
+  sql = "DELETE FROM tickets"
+  SqlRunner.run(sql)
+end
 
 end

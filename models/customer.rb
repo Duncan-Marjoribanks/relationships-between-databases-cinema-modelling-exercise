@@ -31,6 +31,11 @@ result = customer_hashes.map{ |customer_hash| Customer.new(customer_hash)}
 return result
 end
 
+def self.delete_all
+  sql = "DELETE FROM customers"
+  SqlRunner.run(sql)
+end
+
 
 
 

@@ -29,5 +29,10 @@ def self.map_items(film_hashes)
   return result
 end
 
+def self.delete_all
+  sql = "DELETE FROM films"
+  SqlRunner.run(sql)
+end
+
 
 end
