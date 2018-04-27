@@ -9,13 +9,13 @@ Film.delete_all()
 
 #customer instances
 customer1 = Customer.new({
-  "name" => "Barry Jones",
+  "name" => "Marmaduke Jones",
   "funds" => "25"
   })
 customer1.save()
 
 customer2 = Customer.new({
-  "name" => "Timmy Bain",
+  "name" => "Jemima Bain",
   "funds" => "40"
   })
 customer2.save()

@@ -28,7 +28,13 @@ def update()
 
 end
 
-
+def films()
+  sql = "SELECT films.* FROM films INNER JOIN tickets ON tickets.film_id = films.id WHERE tickets.customer_id = $1"
+  values = [@id]
+  film_hashes = SqlRunner.run(sql, values)
+  films = Film.map_items(film_hashes)
+  return films
+end
 #class methods below this line
 
 def self.all()
