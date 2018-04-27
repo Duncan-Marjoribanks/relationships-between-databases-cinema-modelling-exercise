@@ -20,6 +20,9 @@ def save()
   @id = ticket["id"].to_i
 end
 
+
+# class methods below this line
+
 def self.all()
   sql = "SELECT * FROM tickets"
   ticket_hashes = SqlRunner.run(sql)

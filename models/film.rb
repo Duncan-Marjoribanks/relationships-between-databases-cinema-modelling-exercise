@@ -17,6 +17,8 @@ def save()
   @id = film["id"].to_i
 end
 
+
+# class methods below this line
 def self.all()
   sql = "SELECT * FROM films"
   film_hashes = SqlRunner.run(sql)

@@ -20,6 +20,9 @@ def save()
   @id = customer["id"].to_i
 end
 
+
+#class methods below this line
+
 def self.all()
   sql = "SELECT * FROM customers"
   customer_hashes = SqlRunner.run(sql)
