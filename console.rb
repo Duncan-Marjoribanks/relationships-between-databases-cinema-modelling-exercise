@@ -11,7 +11,11 @@ customer1 = Customer.new({
 customer1.save()
 
 
-
+film1 = Film.new({
+  "title" => "Rainbow Bright 6 - The Bloody End",
+  "price" => "5"
+  })
+film1.save()
 
 
 
