@@ -44,10 +44,10 @@ class Customer
   def increase_funds(amount)
     @funds += amount
   end
-
+  
   # def buy_ticket(film)
-  #   sql = "INSERT INTO tickets (customer_id, film_id) VALUES ($1, film_id) INNER JOIN films ON film_id WHERE film.title = $3"
-  #   values = [@id, film.]
+  #   sql = "INSERT INTO tickets (customer_id, film_id) VALUES ($1, film_id) INNER JOIN films ON film_id WHERE film.title = $2"
+  #   values = [@id, film]
   #   SqlRunner.run(sql, values)
   #   reduce_funds(film.price)
   # end
