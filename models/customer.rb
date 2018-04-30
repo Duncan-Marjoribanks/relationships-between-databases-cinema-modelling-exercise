@@ -45,13 +45,12 @@ class Customer
     @funds += amount
   end
 
-  def buy_ticket(film)
-    sql = "INSERT INTO tickets (customer_id, film_id) VALUES ($1, $2)"
-    values = [@id, film.id]
-    SqlRunner.run(sql, values)
-    reduce_funds(film.price)
-    update()
-  end
+  # def buy_ticket(film)
+  #   sql = "INSERT INTO tickets (customer_id, film_id) VALUES ($1, film_id) INNER JOIN films ON film_id WHERE film.title = $3"
+  #   values = [@id, film.]
+  #   SqlRunner.run(sql, values)
+  #   reduce_funds(film.price)
+  # end
 
   def count_tickets()
     sql = "SELECT * FROM tickets WHERE customer_id = $1"

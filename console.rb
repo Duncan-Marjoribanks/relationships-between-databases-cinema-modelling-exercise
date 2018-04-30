@@ -20,6 +20,7 @@ customer2 = Customer.new({
   })
 customer2.save()
 
+
 #film instances
 film1 = Film.new({
   "title" => "Rainbow Bright 6 - The Bloody End",
@@ -50,11 +51,10 @@ ticket2.save()
 ticket3 = Ticket.new({
   "customer_id" => customer1.id,
   "film_id" => film2.id
-  })
+    })
 ticket3.save()
 
 
 
-
-  binding.pry
-  nil
+binding.pry
+nil
